@@ -20,3 +20,17 @@ StringCalc поддерживает:
 - арккотангенс "acot(x)"
 - нахождение процента "perc(x)"
 - вычисление факториала "fact(x)"
+## Использование
+Подкючаем ``.jar`` и обращаемся к статическому методу getResult класса StringCalc, в параметры которого и подаем строку для вычисления. 
+Пример использование: 
+```java
+// Вызываем статический метод getResult из StringCalc;
+double result = StringCalc.getResult("(2+2)^2*fact(5)+log(ln(100)*100)+sin(30)", StringCalcModes.DEGREES);
+// Выводим результат
+System.out.println("Результат: " + result);
+
+// Также есть перегруженная версия метода getResult, если в строке нет тригонометрических функций;
+double result = StringCalc.getResult("(2+2)^2*fact(5)+log(ln(100)*100)");
+// Выводим результат
+System.out.println("Результат: " + result);
+```
